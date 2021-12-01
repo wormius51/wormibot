@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Overlay</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td id="chat"></td>
+            <td id="display" class="transparent">
+            </td>
+        </tr>
+        <tr>
+            <td id="face-cam" class="transparent">
+            </td>
+            <td id = "floor">
+                <table id="puzzle">
+                    <tr>
+                        <td><div class="cell"></div></td>
+                        <td><div class="cell"></div></td>
+                        <td><div class="cell"></div></td>
+                        <td><div class="cell"></div></td>
+                        <td><div class="cell"></div></td>
+                        <td><div class="cell"></div></td>
+                        <td><div class="cell"></div></td>
+                        <td><div class="cell"></div></td>
+                        <td><div class="cell"></div></td>
+                        <td><div class="cell"></div></td>
+                    </tr>
+                    <tr>
+                        <td><div class="cell"></div></td>
+                        <td><div class="cell"></div></td>
+                        <td><div class="cell"></div></td>
+                        <td><div class="cell"></div></td>
+                        <td><div class="cell"></div></td>
+                        <td><div class="cell"></div></td>
+                        <td><div class="cell"></div></td>
+                        <td><div class="cell"></div></td>
+                        <td><div class="cell"></div></td>
+                        <td><div class="cell"></div></td>
+                    </tr>
+                    <tr>
+                        <td><div class="cell"></div></td>
+                        <td><div class="cell"></div></td>
+                        <td><div class="cell"></div></td>
+                        <td><div class="cell"></div></td>
+                        <td><div class="cell"></div></td>
+                        <td><div class="cell"></div></td>
+                        <td><div class="cell"></div></td>
+                        <td><div class="cell"></div></td>
+                        <td><div class="cell"></div></td>
+                        <td><div class="cell"></div></td>
+                    </tr>
+                </table>
+                <p id = "game-info">
+                    Rules: <br>
+                    0 everything out.
+                    5 prevents movement.
+                    You can't make 3.
+                </p>
+                <p id = "music-info">
+                    Type "!m" followed by notes to play music.<br>
+                    For example: !m c c g g a a g 0 f f e e d d c <br>
+                    <br>
+                    Type "!paint" followed by coordinates to draw.<br>
+                    For example: !paint 100 100 200 200 white 5
+                </p>
+                <img id="logo" src="/images/worm.gif">
+            </td>
+        </tr>
+    </table>
+    <canvas id = "gameCanvas"></canvas>
+    <script src="/scripts/main.js"></script>
+    <script src="/scripts/puzzle.js"></script>
+    <script src="/scripts/music.js"></script>
+    <script src="/scripts/paint.js"></script>
+</body>
+
+</html>

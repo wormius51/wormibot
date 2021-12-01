@@ -1,0 +1,26 @@
+{
+  "name": "wormibot",
+  "version": "1.0.0",
+  "description": "a twitch bot for my channel",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "wormibot"
+  },
+  "keywords": [
+    "357159ddff"
+  ],
+  "author": "Eyal Hazor",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.6.1",
+    "express": "^4.17.1",
+    "socket.io": "^2.2.0",
+    "twitch-js": "^1.2.14"
+  }
+}
