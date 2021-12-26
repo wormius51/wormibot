@@ -64,9 +64,7 @@ const options = {
 };
 
 const client = new twitch.client(options);
-client.color("BlueViolet");
 
-// Connect the client to the server..
 client.connect();
 
 client.on("chat", function (channel, userstate, message, self) {
@@ -95,6 +93,9 @@ client.on("chat", function (channel, userstate, message, self) {
 
 
 	switch (command) {
+		case "!onlyfans":
+			say("https://www.youtube.com/watch?v=09hWCkA2mNg&t=250s", userstate);
+			break;
 		case "!termix":
 			say("Termix the terrific is finally among us!", userstate);
 			break;

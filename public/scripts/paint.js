@@ -49,7 +49,8 @@ function paint (username, paramsArray) {
 }
 
 function setColor (username, color) {
-    userColors[username] = color;
+    if (color != "clear")
+        userColors[username] = color;
 }
 
 function setWidth (username, width) {
@@ -75,12 +76,17 @@ function makeLine(x0, y0, x1, y1, width, color) {
 }
 
 function drawLine (line) {
-    gameContext.beginPath();
-    gameContext.lineWidth = line.width;
-    gameContext.strokeStyle = line.color;
-    gameContext.moveTo(line.x0, line.y0);
-    gameContext.lineTo(line.x1, line.y1);
-    gameContext.stroke();
+    if (line.color == "clear") {
+        gameContext.clearRect(line.x0, line.y0, line.x1, line.y1);
+    } else {
+        gameContext.beginPath();
+        gameContext.lineWidth = line.width;
+        gameContext.strokeStyle = line.color;
+        gameContext.moveTo(line.x0, line.y0);
+        gameContext.lineTo(line.x1, line.y1);
+        gameContext.stroke();
+    }
+    
 }
 
 function clear () {
