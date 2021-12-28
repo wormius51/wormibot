@@ -316,7 +316,17 @@ var wisperMode = false;
 var sayCommandsCycle = setInterval(() => {
 	sayPeriodically("My games: https://wormius.herokuapp.com/games");
 }, cycleLengh);
-var pingCycle = setInterval(() => {client.ping()}, 5000);
+var pingCycle = setInterval(ping, 5000);
+
+function ping () {
+	client.ping().catch(reason => {
+		console.log(reason);
+		clearInterval(pingCycle);
+		client.connect().then(() => {
+			pingCycle = setInterval(ping, 5000);
+		});
+	});
+}
 
 function sayCommands() {
 	if (numberOfComments < 3) return;
