@@ -321,10 +321,6 @@ var pingCycle = setInterval(ping, 5000);
 function ping () {
 	client.ping().catch(reason => {
 		console.log(reason);
-		clearInterval(pingCycle);
-		client.connect().then(() => {
-			pingCycle = setInterval(ping, 5000);
-		});
 	});
 }
 
